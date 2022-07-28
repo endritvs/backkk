@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\interviewee_types;
-use App\Http\Requests\Storeinterviewee_typesRequest;
-use App\Http\Requests\Updateinterviewee_typesRequest;
+
 
 class IntervieweeTypesController extends Controller
 {

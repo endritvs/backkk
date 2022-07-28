@@ -13,26 +13,30 @@
 
 
   <body>
-<a href="{{route('interviewee.create')}}">Create</a>
+<a href="{{route('intervieweeAttributes.create')}}">Create</a>
     <table style="border: 1px solid black">
   <tr>
     <th>id</th>
     <th>Name</th>
+    <th>Interviewee Type</th>
   </tr>
 
-  @foreach( $interviewees as $i ) <!-- Qet secilin prej userave ne tabele -->
+  @foreach( $intervieweesA as $i ) <!-- Qet secilin prej userave ne tabele -->
 
   <tr>
+   {{-- {{ dd($i->interviewee_type->name)}} --}}
     <td> {{ $i -> id }} </td> <!-- Qet ID te Userit -->
     <td> {{ $i -> name }} </td> <!-- Qet Emrin e Userit -->
+    <td>{{$i->interviewee_type->name}}</td>
+    {{-- <td>{{$i->interviewee_types.name}}</td> --}}
     
-    <td> <a href="{{route('interviewee.edit',$i->id)}}">Edit</a> </td> <!-- Edit Button Here -->
-    <td> <a href="{{ route('interviewee.destroy', $i -> id) }}">Delete</a> </td> <!-- Delete Button Here -->
+     <td> <a href="{{route('intervieweeAttributes.edit',$i->id)}}">Edit</a> </td> 
+    <td> <a href="{{ route('intervieweeAttributes.destroy', $i -> id) }}">Delete</a> </td>  
   </tr>
   
   @endforeach
 </table>
-{{ $interviewees->links() }}
+{{ $intervieweesA->links() }}
 
   </body>
 </html>

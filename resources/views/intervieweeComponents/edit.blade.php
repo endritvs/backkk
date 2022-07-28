@@ -12,7 +12,7 @@
         <label for="fname">Name:</label><br>
         <input type="text" id="name" name="name" value="{{$interviewee->name}}"><br>
 
-        <button type="submit" class="btn btn-primary mt-2">Create</button>
+        <button type="submit" class="btn btn-primary mt-2">Edit</button>
       </form> 
       
     
