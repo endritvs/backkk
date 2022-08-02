@@ -24,7 +24,7 @@
 
   <tr>
     <td> {{ $i -> id }} </td> <!-- Qet ID te Userit -->
-    <td> {{ $i -> name }} </td> <!-- Qet Emrin e Userit -->
+    <td> {{ $i -> Name }} </td> <!-- Qet Emrin e Userit -->
     
     <td> <a href="{{route('interviewee.edit',$i->id)}}">Edit</a> </td> <!-- Edit Button Here -->
     <td> <a href="{{ route('interviewee.destroy', $i -> id) }}">Delete</a> </td> <!-- Delete Button Here -->

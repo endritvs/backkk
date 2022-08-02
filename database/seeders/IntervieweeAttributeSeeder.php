@@ -24,7 +24,7 @@ class IntervieweeAttributeSeeder extends Seeder
         foreach (range(1, 100) as $index) {
             DB::table('interviewee_attributes')->insert([
                 'name' => $faker->name,
-                'interviewee_types_id' => $index
+                'interviewee_types_id' => $index,
             ]);
         }
     }

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\interviewee_types;
 use App\Http\Controllers\IntervieweeTypesController;
 use App\Http\Controllers\Interviewee_AttributesController;
+use App\Http\Controllers\IntervieweeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +55,17 @@ Route::prefix('interviewee-attributes')->group(
         Route::get('/destroy/{id}', [Interviewee_AttributesController::class, 'destroy'])->name('intervieweeAttributes.destroy');
         Route::get('/create', [Interviewee_AttributesController::class, 'create'])->name('intervieweeAttributes.create');
         Route::post('/store-interviewee', [Interviewee_AttributesController::class, 'store'])->name('intervieweeAttributes.store');
+    }
+);
+
+Route::prefix('interviewees')->group(
+    function () {
+        Route::get('/', [IntervieweeController::class, 'index'])->name('interviewees.index');
+        Route::get('/edit-interviewees/{id}', [IntervieweeController::class, 'edit'])->name('interviewees.edit');
+        Route::post('/update-interviewees/{id}', [IntervieweeController::class, 'update'])->name('interviewees.update');
+        Route::get('/destroy/{id}', [IntervieweeController::class, 'destroy'])->name('interviewees.destroy');
+        Route::get('/create', [IntervieweeController::class, 'create'])->name('interviewees.create');
+        Route::post('/store-interviewees', [IntervieweeController::class, 'store'])->name('interviewees.store');
     }
 );
 
