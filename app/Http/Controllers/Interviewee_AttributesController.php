@@ -12,8 +12,6 @@ class Interviewee_AttributesController extends Controller
     public function index()
     {
         $intervieweesA = Interviewee_Attribute::with('interviewee_type')->orderBy('id', 'asc')->paginate(5);
-        // $intervieweesT = interviewee_type::with('interviewee_type')->orderBy('id', 'asc')->get();
-        // dd($intervieweesA);
         return view('intervieweeAttributesComponents/table')->with(['intervieweesA' => $intervieweesA]);
     }
 
